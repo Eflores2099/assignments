@@ -1,0 +1,26 @@
+header{
+    display: block;
+    font-size: 50px;
+    font-style: italic;
+    font-weight: bold; 
+    font-family: helvetica;
+}
+
+h1{
+   font-size: 30px;
+   display: inline-block;
+
+
+}
+
+.colum{
+    font-size: 20px;
+    line-height: 25px;
+    float: left;
+    columns: 2;
+    
+}
+
+
+
+

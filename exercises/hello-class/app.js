@@ -1,9 +1,10 @@
-/*var person = "Mario"
 
+function sayHello(name, age){
+    console.log("hello " + name + " how do you like being " + age)
 
-function sayHello = (name){
-    console.log("hello " + name)
 }
-sayHello("Mario")
+sayHello("Mario", 27)
 
-*/
+
+
+
