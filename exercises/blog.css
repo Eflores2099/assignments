@@ -1,0 +1,71 @@
+*{
+    overflow: scroll;
+    
+}
+a:visited{
+    color: white;
+}
+
+body{
+    font-family: arial;
+    padding: 20px;
+    background-color: peachpuff;
+}
+.topnav{
+    float: left;
+    padding:10px;
+    text-decoration: none;
+    font-size: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color:#333;
+    color: antiquewhite;
+}
+.header{
+    text-align: center;
+    padding: 30px;
+    font-size: 35px;
+    background-color: grey
+    
+}
+
+
+.card{
+    background-color:lightslategray;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+    }
+.card2{
+        background-color: lightsteelblue;
+        padding:20px;
+        margin-top: 20px;
+        font-size: 20px;
+        display: inline-block;
+    }
+
+    .card2.p{
+        display: relative;
+        
+    }
+    .card3{
+        background-color: lightseagreen;
+        padding:20px;
+        margin-top: 20px;
+        font-size: 20px;
+        display:inline-block;
+    }
+
+#picture{
+        margin: 20px;
+    }
+
+#picture2{
+        margin:20px;
+        float: left;
+        
+    }
+    #picture3{
+        margin:20px;
+    }

@@ -157,16 +157,14 @@
 // console.log(newArr)
 
 // 2.Create an array that mimics a grid like the following using for loops:
-var increValue = 0;
-let array = [[]];
+let index = 0;
+let array = []
 
 for(i = 0; i < 3; i++){
-   for(j = 0; j < 3; j++){
-      array[i][j].(increValue);
-
-      if (j == 2){
-        
-         increValue++;
-      };
+   let subArray = [];
+   array.push(subArray)
+   for (j = 0; j < 3; j++){
+      }subArray.push(index);
+      index++;
    }
-}console.log(array)
+console.log(array)

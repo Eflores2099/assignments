@@ -42,7 +42,7 @@ var peopleWhoWantToSeeMadMaxFuryRoad = [
   counter = 0
   for(i = 0; i < peopleWhoWantToSeeMadMaxFuryRoad.length; i ++){
       if(peopleWhoWantToSeeMadMaxFuryRoad[i].age >= 18){
-        console.log("old enough")
+        console.log(peopleWhoWantToSeeMadMaxFuryRoad[i].name + " is old enough.")
         
         }else{
              console.log("not old enough")
