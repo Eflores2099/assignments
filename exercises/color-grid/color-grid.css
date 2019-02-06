@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box; 
+    font-size: 0px;
+}
+
+.pinkBox{; 
+    background: #F5C6D6;
+    padding: 25pt;
+    width: 860pt;
+    height: 100pt;
+    margin:10pt;    
+}
+
+.magenta1{
+    background: #EE2E84;
+    
+    width: 200pt;
+    height: 100pt;
+    padding: 25pt;
+    margin: 10pt;
+    text-align: center;
+    display: inline-block;
+}
+.magenta2{
+    display: inline-block;
+    background: #EE2E84;
+    width: 200pt;
+    height: 100pt;
+    padding: 25pt;
+    margin: 10pt;
+    padding: 25pt;
+
+}
+.magenta3{
+        background: #EE2E84;
+        
+        width: 200pt;
+        height: 100pt;
+        padding: 25pt;
+        margin: 10pt;
+        text-align: center;
+        display: inline-block;
+}
+
+.magenta4{
+        background: #EE2E84;
+        width: 200pt;
+        height: 100pt;
+        padding: 25pt;
+        margin: 10pt;
+        display: inline-block       
+}
+
+.blue1{
+    background: #85cfd8;
+    height: 100pt; 
+    width: 420pt;
+    margin: 10pt;
+    display: inline-block;
+}
+
+.blue2{
+    background: #85cfd8;
+    height: 100pt;
+    width: 420pt;
+    margin: 10pt;
+    display: inline-block;
+}
+
+.green{
+    background: #8DC63F;
+    height: 100pt;
+    width: 655pt;
+    margin: 10pt;
+    display: inline-block;
+}
+.orange{
+    background: #E76E34;
+    height: 100pt;
+    width: 185pt;
+    margin: 10pt;
+    display: inline-block
+}

@@ -1,0 +1,38 @@
+
+body{
+    background-image: url;
+    background-color: lightskyblue;
+    
+    }
+
+.header{
+    border-radius: 100pt;
+    text-align: center;
+    font-family: Courier;
+    padding: 50pt;
+    font-size: 50pt;
+    color:orangered;
+}
+
+.topnav{
+    font-size: 25pt;
+    background-color:none;
+    overflow: hidden;
+}
+.topnav a {
+    float: left;
+    display: block;
+    color:black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 30px;
+  }
+
+  .footer{
+      text-align: center;
+      color:black;
+      font-size: 25;
+  }
+
+  

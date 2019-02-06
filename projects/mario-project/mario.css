@@ -1,0 +1,41 @@
+body{
+    background-image: url(MushroomLand.jpg);
+    font-size: 25px;
+    font-style: bold;
+}
+
+input{
+    font-size:25px;
+}
+
+.header{
+    background-image: url(marioBros.jpg);
+    border-radius:100px;
+    padding-bottom: 50px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#goomba{
+    width:200px;
+}
+
+#bomb{
+    width: 200px
+}
+
+#cheap{
+    width:200px
+}
+
+button{
+    font-size: 25px
+}
+
+footer{
+    font-size: 20px;
+}
+
+
+
+
