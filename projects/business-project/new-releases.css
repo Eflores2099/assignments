@@ -3,7 +3,8 @@ background-color:darkblue;
 }
 .header{
     text-align: center;
-    background-image: url(daredevil.jpg)
+    background-image: url(daredevil.jpg);
+    color: orangered;
 }
 
 .topnav{
@@ -20,10 +21,7 @@ background-color:darkblue;
     text-decoration: none;
     font-size: 30px;
   }
-  
-  .header{
-    color: orangered;
-  }
+
 
   .xmen{
       width:20%;
@@ -42,8 +40,15 @@ background-color:darkblue;
       height: 40%;
       display: flex;
   }
+
+  .red{
+      width: 20%;
+      height: 40%;
+      display: flex;
+  }
   .new-comics{
       display: flex;
-      justify-content: space-between
+      justify-content: space-between;
+      margin: 15pt;
   }
 
