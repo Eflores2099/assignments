@@ -2,7 +2,6 @@ body{
 background-color:darkblue;
 }
 .header{
-    
     text-align: center;
     background-image: url(daredevil.jpg)
 }
@@ -21,6 +20,30 @@ background-color:darkblue;
     text-decoration: none;
     font-size: 30px;
   }
+  
   .header{
     color: orangered;
   }
+
+  .xmen{
+      width:20%;
+      height: 40%;
+      display: flex;
+  }
+
+  .optimus{
+      width:20%;
+      height: 40%;
+      display: flex;
+  }
+
+  .batman{
+      width : 20%;
+      height: 40%;
+      display: flex;
+  }
+  .new-comics{
+      display: flex;
+      justify-content: space-between
+  }
+
