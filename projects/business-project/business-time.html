@@ -1,32 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="business-time.css">
-    <title>Business Time</title>
+    <title>Ten Forward Home</title>
 </head>
+
 <body>
-    <div class="topnav" id="myTopnav">
-        <a href="#home" class="active">Home</a>
-        <a href="#new releaseas">New Releases</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
-    <div class = "header">Ten Forward Comics and Toys</div>
+    <div class="nav-bar-container">
+        <nav class="topnav-show" id="myTopNav">
+            <button id="close-button">
+                X
+            </button>
+            <a href="#business-time.html" class="active">Home</a>
+            <a href="new-releases.html">New Releases</a>
+            <a href="#contact">Contact</a>
+            <a href="javascript:void(0);" class="icon">
+                <i class="fa fa-bars"></i>
+            </a>
+        </nav>
+    </div>
+    <div>
+        <button style="font-size:24px" onclick=toggleNavBar() class="menu-button">Button <i class="fa fa-bars"></i></button>
+    </div>
+    <div class="comic-store"></div>
 
-    
-    
 
 
- <footer class="footer">Ten Forward Comics and Toys
-     <p>Address: 243 Broadway st. Boulder, CO 80304</p>
-     <p>Phone: 303.543.9872</p>
- </footer>   
+
+
+
+
+
+
+
+
+    <div class="header">Ten Forward Comics and Toys</div>
+
+
+
+
+
+    <footer class="footer">Ten Forward Comics and Toys
+        <p>Address: 243 Broadway st. Boulder, CO 80304</p>
+        <p>Phone: 303.543.9872</p>
+    </footer>
 </body>
-<script src = "business-time.js"></script>
+<script src="business-time.js"></script>
+
 </html>

@@ -1,9 +1,17 @@
 
 body{
-    background-image: url;
-    background-color: lightskyblue;
+    background-image: url(comic-store.jpg);
+    overflow: scroll;
     
     }
+.comic-store{
+    background-image: url()
+}
+
+.nav-bar-container{
+    display: none;
+}
+
 
 .header{
     border-radius: 100pt;
@@ -14,25 +22,90 @@ body{
     color:orangered;
 }
 
-.topnav{
+.topnav-hidden{
+    margin-top: 0pt;
     font-size: 25pt;
-    background-color:none;
-    overflow: hidden;
+    background-color: rgba(1,1,1,0.5);
+    display: flex;
+    flex-direction: column;
+    width: 0;
+    position: fixed;
+    height: 100vh;
+    animation: slideOut 1s linear;
 }
-.topnav a {
+@keyframes slideOut{
+    from{
+        width: 200px
+    } to{
+        width: 0;
+    }
+}
+
+.topnav-hidden a{
     float: left;
     display: block;
-    color:black;
+    color:orange;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 30px;
+    animation: textFadeOut  1s linear;
+}
+
+@keyframes textFadeOut{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+.topnav-show{
+    margin-top: 0pt;
+    font-size: 25pt;
+    background-color: rgba(1,1,1,0.5);
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    position: fixed;
+    height: 100vh;
+    animation: slidein 1s linear;
+}
+@keyframes slidein{
+    from{
+        width: 0px;
+    }
+    to{
+        width: 200px;
+    }
+}
+.topnav-show a {
+    float: left;
+    display: block;
+    color:orange;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 30px;
+    animation: textFadeIn  3s linear;
   }
 
+  @keyframes textFadeIn{
+      from{
+          opacity: 0;
+      }
+      to{
+          opacity: 1;
+      }
+  }
+  
   .footer{
       text-align: center;
-      color:black;
-      font-size: 25;
+      color:lawngreen;
+      font-size: 50;
+      position: relative;
+     margin-top: 200pt;
+     float: left;
   }
 
-  

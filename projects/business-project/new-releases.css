@@ -1,0 +1,26 @@
+body{
+background-color:darkblue;
+}
+.header{
+    
+    text-align: center;
+    background-image: url(daredevil.jpg)
+}
+
+.topnav{
+    font-size: 25pt;
+    background-color:none;
+    overflow: hidden;
+}
+.topnav a {
+    float: left;
+    display: block;
+    color:orangered;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 30px;
+  }
+  .header{
+    color: orangered;
+  }
