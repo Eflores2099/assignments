@@ -14,7 +14,6 @@ function toggleNavBar() {
 
 closeButton.addEventListener("click", function () {
     isNavBarShowing = false;
-    console.log(isNavBarShowing)
     myNavBar.className = "topnav-hidden"
     setTimeout(function () {
         myNavContainer.style.display = "none"
