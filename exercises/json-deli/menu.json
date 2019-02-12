@@ -1,0 +1,25 @@
+{
+    "title": "Json Menu",
+    "menu": {
+        "appetizers": [ 
+            {
+            "name":"Chicken Nachos", 
+            "ingredients": ["Chicken", "Blue Corn Chips","Black Beans", "Sour Cream", "Guacamole", "Salsa"],
+            "description": ["BBQ Chicken over a bed of Blue Corn Chips, topped with, black beans, sour cream, guacamole, ansd salsa."]
+                
+           },
+           {"name": "Buffalo Wings",
+            "ingredients":["Tiny chicken wings, buffalo sauce"],
+            "description": ["chicken cooked in buffalo sauce and comes choice of dipping sauce"]
+           }]
+         
+        
+        "Cold Sandwiches": [
+            {
+            "name": "Hame on Swiss",
+
+        }
+        ]
+    }   
+
+}
