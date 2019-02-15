@@ -15,7 +15,7 @@ var enemy = [
         name: 'Monarch Henchman',
         health: 50,
         inventory: ["Dart Gun", "Xanax"],
-        attackDamge: 30,
+        attackDamge: 25,
     },
     {
         name: "The Monarch",
@@ -27,7 +27,7 @@ var enemy = [
         name: "Baron Underbheit",
         health: 105,
         inventory: ["Underbheit's Lower Jaw", "Xanax"],
-        attackDamage: 35,
+        attackDamage: 40,
     },
     {
         name: "Henry Killinger",
@@ -72,7 +72,7 @@ function run() {
         console.log("You ran away successfully, wuss!")
     } else {
         console.log("Double damn it! Play him some of your chin music!")
-        attackEnemy()
+        fight()
     }
 }
 
@@ -93,7 +93,8 @@ function fight() {
                 console.log("attack")
                 newEnemy.health -= player.attackDamage
                 if (newEnemy.health <= 0) {
-                    console.log("Enemy died")
+                    console.log("You killed the enemy and you are left standing covered in your enemy's blood with a raging erection! ")
+                    // console.log("You recei ved" + enemy.inventory + ". Add" + player.health + 30)
                     const currentEnemy = enemy.findIndex(each => each.name === newEnemy.name)
                     enemy.splice(currentEnemy, 1);
                     return walk()
@@ -111,22 +112,6 @@ function fight() {
         return run()
     }
 }
-
-// function attackEnemy(){
-//     var attackDamge = Math.floor(Math.random() * 25) 
-//     enemy.health -= attackDamge
-
-//     enemyAttack()
-
-
-// }
-// Function enemyAttack(){
-//     var attackDamage = Math.floor(Math.random()) *25)
-//     player.health -= attackDamge
-// }
-
-
-
 
 
 
