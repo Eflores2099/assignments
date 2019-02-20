@@ -1,0 +1,17 @@
+
+body{
+    background-color: rosybrown;
+}
+
+.header{
+text-align: center;
+}
+
+.menu{
+    display: flex;
+    align-items: ;
+    font-family: sans-serif;
+    font-size:25px
+    
+}
+
