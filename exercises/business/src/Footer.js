@@ -4,7 +4,7 @@ import React from "react"
 function Footer(){
     return(
         <footer>
-           <div>Nacho's Nachos : 354 S. Broadway: Seattle, WA</div> 
+           <div> Oakenshield's English Pub: 354 S. Broadway: Seattle, WA</div> 
            
         </footer>
     )
