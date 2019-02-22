@@ -8,29 +8,33 @@
 }
 
 header {
-    font-size: 20px;
+    font-size: 50px;
     background-image: url(huntington.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 200px;
     color:white;
+    
 }
 
 main {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    background-color: darkkhaki
+    font-size: 45px;
+    background-color:
 }
 
 .section1{
-    background-color: darkorchid;
+    
     
 }
 
 .section2{
-    background-color: green;
+    background-color:seagreen;
+    background-image: url(bamboo.png);
+
 }
 
 
