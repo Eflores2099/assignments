@@ -1,9 +1,17 @@
 import React from'react'
-import  Seasons from '/.Seasons'
 
-const priceList = prop => {
-    const mappedSeason = prop.season.map((season, i) => <Season season ={vacationSpots.season}/>)
 
+const PriceList = props => {
+    console.log(props)
+    
+    return (
+        <div className = 'card-container'>
+            {props.place}
+            {props.price}
+            {props.season}
+        </div>   
+    )
 }
+
 
 export default PriceList

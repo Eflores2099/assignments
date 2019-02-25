@@ -1,16 +1,22 @@
 import React from 'react'
 import PriceList from './PriceList.js'
 
-const placeList = props => {
-    const mappedPrices = prop.price.map((price, i) => <Price place = {vacationSpots.place}  price = {vacationSpots.price} season = {vacationSpots.season} key= {i}/>)
+const PlaceList = props => {
+    // console.log(props)
+    const mappedPrices = props.vacationSpots.map((price, i) => 
+                                            <PriceList  
+                                            place = {price.place} 
+season = {price.season} 
+price = {price.price} 
+                                            key = {i}/>)
 
     return(
         
-        
-        <div style ={{border:'1px solid rose',margin: 4}}>
-
-        {mappedPrices}
+        <div>
+            {mappedPrices}
         </div>
     )
 }
+
 export default PlaceList
+

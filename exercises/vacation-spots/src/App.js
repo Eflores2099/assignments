@@ -1,5 +1,6 @@
 import React from 'react'
 import  PlaceList from './PlaceList.js'
+import './style.css'
 
 
 const App = () => {
@@ -20,18 +21,21 @@ const App = () => {
         },{
           place: "Moscow",
           price: 1100,
-          timeToGo: "Summer"
+          season: "Summer"
         },{
           place: "Lebanon",
           price: 400,
           season: "Spring"
         }
       ]
-      return(
+      
+    
+    return(
         <div>
-            <PlaceList place = {place}/>
+            <PlaceList vacationSpots={vacationSpots}/>
+  
         </div>
-    )
+    )     
 }
 
 export default App
