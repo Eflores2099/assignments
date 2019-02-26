@@ -5,7 +5,7 @@ const PriceList = props => {
     console.log(props)
     
     return (
-        <div className = 'card-container'>
+        <div>
             {props.place}
             {props.price}
             {props.season}
