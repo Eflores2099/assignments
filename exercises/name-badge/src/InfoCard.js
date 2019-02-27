@@ -3,40 +3,41 @@ import React from 'react'
 
 
 const infoCard = (props) => {
+    console.log(props)
     return(
-        <form  nameClass = "forms" onSubmit = {props.handleSubmit}>
-                <input type = "text" 
-                    name =" firstName" 
+        <form  className = "forms" onSubmit = {props.handleSubmit}>
+                <input  className = "firstName" type = "text" 
+                    name ="firstNameInput" 
                     value = {props.firstName} 
                     onChange = {props.handleChange} 
                     placeholder = "First Name"/>
-                <input type = "text" 
-                    name = "lastName" 
+                <input className = "lastName" type = "text" 
+                    name = "lastNameInput" 
                     value = {props.lastName} 
                     onChange = {props.handleChange} 
                     placeholder = "Last Name"/>
-                <input type = "text" 
-                    name = "email" 
+                <input className  = "email" type = "text" 
+                    name = "emailInput" 
                     value = {props.emailInput} 
                     onChange = {props.handleChange} 
                     placeholder = "Email"/>
-                <input type = "text" 
-                    name = "birth" 
+                <input className = "birth" type = "text" 
+                    name = "birthInput" 
                     value = {props.birthInput} 
                     onChange = {props.handleChange} 
                     placeholder = "Birth Place"/>
-                <input type = "number" 
-                    name = "phone" 
+                <input className = "phone" type = "number" 
+                    name = "phoneInput" 
                     value = {props.phoneInput} 
                     onChange = {props.handleChange}  
                     placeholder = "Phone Number"/>
-                <input type = "text" 
-                    name  = "favFood" 
+                <input className = "favFood" type = "text" 
+                    name  = "favFoodInput" 
                     value = {props.favFoodInput} 
                     onChange = {props.handleChange} 
                     placeholder = "Favorite Food"/>
-                <input type = "text" 
-                    name = "peronalInput" 
+                <input className = "personal" type = "text" 
+                    name = "personalInput" 
                     value = {props.personalInput} 
                     onChange = {props.handleChange} 
                     placeholder = "Tell us about youself"/>

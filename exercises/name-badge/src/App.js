@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
-import InfoCard from './InfoCard.js'
+import InfoCard from './InfoCard'
 import './style.css'
+import Badge from './Badge'
 
 class App extends Component {
     constructor() {
@@ -12,12 +13,15 @@ class App extends Component {
             birthInput: "",
             phoneInput: "",
             favFoodInput: "",
-            personalInput: ""
+            personalInput: "",
+            namesArr: []
         }
     }
 
 
 handleChange = (e) => {
+    console.log(e.target.name)
+    console.log(e.target.value)
     this.setState({
        [e.target.name]: 
        e.target.value 
@@ -26,6 +30,16 @@ handleChange = (e) => {
 
 handleSubmit = (e) => {
     e.preventDefault()
+    const newPerson = {
+        firstName: this.state.firstNameInput,
+        lastName: this.state.lastNameInput,
+        email: this.state.emailInput,
+        birth: this.state.birthInput,
+        phone: this.state.phoneInput,
+        favFood: this.state.favFoodInput,
+        personal: this.state.personalInput,
+
+    }
     this.setState(prevState =>{
         return {
             firstNameInput: "",
@@ -34,7 +48,9 @@ handleSubmit = (e) => {
             birthInput: "",
             phoneInput: "",
             favFoodInput: "",
-            personalInput: ""
+            personalInput: "",
+            namesArr: [...prevState.namesArr, newPerson]
+
         }
     })
 }    
@@ -42,7 +58,19 @@ handleSubmit = (e) => {
     render(){
         return (
             <div>
-                <InfoCard />
+                <InfoCard 
+                handleChange= {this.handleChange}
+                handleSubmit= {this.handleSubmit}
+                firstName = {this.state.firstNameInput}
+                lastName= {this.state.lastNameInput}
+                emailInput= {this.state.emailInput}
+                birthInput= {this.state.birthInput}
+                phoneInput = {this.state.phoneInput}
+                favFoodInput={this.state.favFoodInput}
+                personalInput= {this.state.personalInput}
+                />
+                <Badge 
+                namesArr ={this.state.namesArr}/>
             </div>
         )}
     }

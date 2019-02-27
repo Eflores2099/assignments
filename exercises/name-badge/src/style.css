@@ -1,5 +1,17 @@
 .forms{
-border-style: solid blue; 
-margin: 5%;
+display:grid;
+
+justify-content: space-between;
+margin: 100px;
+border-style: solid; 
+width: 30%;
+height: 50%;
+
+padding: 20px;
+
+}
+
+.personal{
+    
 
 }

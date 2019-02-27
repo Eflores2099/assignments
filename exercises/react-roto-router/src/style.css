@@ -1,0 +1,36 @@
+body{
+background-color:white;
+}
+
+#title{
+    text-align: center;
+    background-image: url(plumber.jpg);
+    width: 100%;
+    height: 400px;
+    color: White;
+    
+}
+
+#sub-heading{
+    text-align: center;
+}
+
+#content{
+    text-align: center;
+}
+
+#services{
+    text-align: center;
+    padding-top:100px;
+    padding-bottom: 50px;
+}
+
+footer{
+    text-align: center;
+    padding-top: 300px
+}
+
+.nav{
+    border-style: ridge;
+    width: 10%;
+}
