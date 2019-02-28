@@ -11,7 +11,12 @@ padding: 20px;
 
 }
 
-.personal{
+.greeting{
     
+}
 
+.badge{
+    border-style:solid;
+    padding-top: 20px;
+    width: 50%;
 }
