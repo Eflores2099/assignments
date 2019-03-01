@@ -1,14 +1,12 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
-const Nav = () => {
+const Nav = (props) => {
     return (
         <div className = "nav-container">
-            <nav>
-                <p>Home </p>
-                <p>About </p>
-                <p>Contact </p>
-
-            </nav>
+            <Link to = '/'>Home</Link>
+            <Link to = '/Main'>Main Page</Link>
+            <Link to = '/Footer'>Footer</Link>
             
         </div>
     )

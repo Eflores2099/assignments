@@ -1,12 +1,19 @@
 import React from 'react'
-import {} from ''
+import Nav from './Nav'
+import Main from './Main'
+import Footer from './Footer'
+import { Switch, Route} from 'react-router-dom'
 
 
 const App = (props) => {
     return (
         <div>
+            <Nav />
+            <Switch>
+            <Main />
+            </Switch>
+            <Footer />
             <div>
-                <p>Home Page</p>
 
             </div>
             <div>
