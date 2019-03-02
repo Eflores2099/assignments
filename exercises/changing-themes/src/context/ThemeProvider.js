@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import ThemeProvider from './context/ThemeProvider.js'
+
+const ThemeContext = React.createContext()
 
 
 class ThemeProvider extends Component {
@@ -29,7 +30,7 @@ class ThemeProvider extends Component {
 
 
     render() {
-        return(
+        return (
 
         )
     }
