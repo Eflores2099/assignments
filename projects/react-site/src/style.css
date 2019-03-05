@@ -1,0 +1,25 @@
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+
+}
+
+
+.nav{
+    width: 100vw;
+    height: 50px;
+    background-color: grey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.about{
+    text-align: center;
+    padding-top: 50px;
+}
+p{
+padding-top: 25px;
+}
