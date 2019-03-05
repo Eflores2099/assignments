@@ -7,7 +7,7 @@ class ThemeProvider extends Component {
     constructor(){
         super()
         this.state = {
-            theme : "dark"
+            theme : "light"
         }
     }
 
@@ -20,19 +20,22 @@ class ThemeProvider extends Component {
 
 
 
-
-
-
-
-
-
-
-
-
     render() {
         return (
-
+            <ThemeContext.Provider
+            value ={{
+                theme: this.state.theme,
+                toggleTheme: this.toggleTheme
+            }}>
+                {this.props.children}
+            </ThemeContext.Provider>
         )
     }
 }
+export const luzTheme = C => props => (
+    <ThemeContext.Consumer>
+        { value => <C {...value} {...props}/> }
+    </ThemeContext.Consumer>
+)
+
 export default ThemeProvider

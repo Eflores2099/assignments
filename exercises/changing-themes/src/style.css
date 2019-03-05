@@ -1,3 +1,44 @@
-.nav-container{
-    
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.nav-container {
+    width: 100vw;
+    height: 50px;
+    background-color: grey;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.main-content{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-family: sans-serif;
+}
+
+.footer-content{
+    background-color: grey;
+    width: 100vw;
+    height:10vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.button{
+display:flex;
+justify-content: center;
+align-items: center;
+padding: 10px;
+border-radius: 10px;
+
 }

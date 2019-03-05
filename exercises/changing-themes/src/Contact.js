@@ -1,13 +1,13 @@
 import React from 'react'
 
 
-const Footer = () => {
+const Contacts = () => {
     return (
-        <div>
+        <div className = "footer-content">
             <h3>This is my footer</h3>
 
         </div>
     )
 }
 
-export default Footer
+export default Contacts
