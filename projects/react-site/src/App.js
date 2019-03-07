@@ -12,17 +12,13 @@ import ResultPage from "./Components/ResultPage"
 class App extends Component {
     constructor (){
         super()
-        // this.state = {
-        //   name:"",
-        //   city: "",
-        //   state: "",
-        //   website_url:""
+      
         
-        // }
+      
     }
 
     componentDidMount() {
-        this.props.getBrews()
+        // this.props.getBrews()
     }
 
 

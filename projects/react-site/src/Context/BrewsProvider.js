@@ -7,14 +7,13 @@ class BrewsProvider extends Component {
     constructor() {
         super()
         this.state = {
-            breweriesArr: []
+            breweriesArr: [{}]
         }
         this.url = "https://api.openbrewerydb.org/breweries"
     }
 
 
     getBrews = (userInput) => {
-        
         axios.get(`https://api.openbrewerydb.org/breweries?by_name=${userInput}`).then(response => { 
             console.log(response)
             this.setState({

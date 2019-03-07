@@ -37,7 +37,6 @@ class Home extends Component {
                     <input type = "text" name = "userInput" onChange = {this.handleChange} placeholder = "Name of Brewery"/>
                     <button className = "button">Submit</button>            
                 </form>
-                <ResultPage />
                  
             </div>
         )
