@@ -1,11 +1,11 @@
 import React, { Component} from 'react'
 import NavBar from './Components/NavBar.js'
 import Home from './Components/Home.js'
-// import ResultPage from './Components/ResultPage.js'
 import About from './Components/About.js'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import './style.css'
 import { withBrews } from './Context/BrewsProvider.js'
+import ResultPage from "./Components/ResultPage"
 
 
 
@@ -26,9 +26,6 @@ class App extends Component {
     }
 
 
-
-
-    
     render () {
         console.log(this.props)
         return (
@@ -37,15 +34,13 @@ class App extends Component {
                 <Switch>
                     <Route exact path = "/" component = {Home}/>
                     <Route path = "/about" component = {About}/>
+                    <Route path = "/ResultPage" component= {ResultPage}/>
                 </Switch>
             </div>
             )
         }  
     
 }
-
-
-
 
 
 export default withBrews(withRouter(App))

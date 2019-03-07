@@ -14,6 +14,7 @@ class BrewsProvider extends Component {
 
 
     getBrews = (userInput) => {
+        
         axios.get(`https://api.openbrewerydb.org/breweries?by_name=${userInput}`).then(response => { 
             console.log(response)
             this.setState({
@@ -31,8 +32,6 @@ class BrewsProvider extends Component {
         )
     }
 }
-
-
 
 
 export const withBrews = C => props => (
