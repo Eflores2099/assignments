@@ -24,6 +24,7 @@ class Home extends Component {
         
         e.preventDefault()
         this.props.getBrews(this.state.userInput)
+        this.props.getCityBrews(this.state.userInput)
          this.props.history.push('/ResultPage') 
         
         
@@ -35,7 +36,12 @@ class Home extends Component {
             <div className = "form">
                 <form onSubmit ={this.handleSubmit}>
                     <input type = "text" name = "userInput" onChange = {this.handleChange} placeholder = "Name of Brewery"/>
-                    <button className = "button">Submit</button>            
+                    <button className = "button">Submit</button>  
+                         
+                </form>
+
+                <form>
+
                 </form>
                  
             </div>

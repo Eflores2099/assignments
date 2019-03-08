@@ -6,6 +6,7 @@ import { Switch, Route, withRouter } from 'react-router-dom'
 import './style.css'
 import { withBrews } from './Context/BrewsProvider.js'
 import ResultPage from "./Components/ResultPage"
+import MappedBrews from "./Context/MappedBrews.js"
 
 
 
@@ -23,7 +24,7 @@ class App extends Component {
 
 
     render () {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <div>
                 <NavBar />
