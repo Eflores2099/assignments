@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import ResultPage from './ResultPage.js'
+// import ResultPage from './ResultPage.js'
 import {withBrews} from '../Context/BrewsProvider'
 
 
@@ -49,7 +49,7 @@ handleCitySubmit = (e) => {
 
                 <form onSubmit = {this.handleCitySubmit}>
                 <input type = "text" name = "cityInput"  value = {this.state.cityInput} onChange = {this.handleChange} placeholder = "Name of City"/>
-                    <button className = "button">Submit</button>
+                    <button className = "button2">Submit</button>
 
                 </form>
                  

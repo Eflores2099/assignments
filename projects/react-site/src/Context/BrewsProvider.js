@@ -7,7 +7,7 @@ class BrewsProvider extends Component {
     constructor() {
         super()
         this.state = {
-            breweriesArr: [{}],
+            breweriesArr: [{name: "", city: "", state: "", website_url: ""}],
             cityBrewsArr: [{}]
             
         }
@@ -21,7 +21,7 @@ class BrewsProvider extends Component {
             console.log(response)
             this.setState({
 
-                breweriesArr: response.data
+                breweriesArr: response.data.length ? response.data : [{name: "", city: "", state: "", website_url: ""}]
             })
         })
     }
