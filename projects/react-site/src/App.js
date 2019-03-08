@@ -6,7 +6,7 @@ import { Switch, Route, withRouter } from 'react-router-dom'
 import './style.css'
 import { withBrews } from './Context/BrewsProvider.js'
 import ResultPage from "./Components/ResultPage"
-import MappedBrews from "./Context/MappedBrews.js"
+import MappedBrews from "./Components/MappedBrews.js"
 
 
 
@@ -32,6 +32,7 @@ class App extends Component {
                     <Route exact path = "/" component = {Home}/>
                     <Route path = "/about" component = {About}/>
                     <Route path = "/ResultPage" component= {ResultPage}/>
+                    <Route path = "/MappedBrews" component = {MappedBrews}/>
                 </Switch>
             </div>
             )

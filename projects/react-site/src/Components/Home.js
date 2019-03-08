@@ -7,7 +7,8 @@ class Home extends Component {
     constructor() {
         super()
         this.state = {
-            userInput: ""
+            userInput: "",
+            cityInput: ""
         }
 
     }
@@ -24,10 +25,15 @@ class Home extends Component {
         
         e.preventDefault()
         this.props.getBrews(this.state.userInput)
-        this.props.getCityBrews(this.state.userInput)
          this.props.history.push('/ResultPage') 
         
         
+}
+
+handleCitySubmit = (e) => {
+    e.preventDefault()
+    this.props.getCityBrews(this.state.cityInput)
+    this.props.history.push('/MappedBrews')
 }
 
 
@@ -35,12 +41,15 @@ class Home extends Component {
         return (
             <div className = "form">
                 <form onSubmit ={this.handleSubmit}>
-                    <input type = "text" name = "userInput" onChange = {this.handleChange} placeholder = "Name of Brewery"/>
+                    <input type = "text" name = "userInput"  value = {this.state.userInput} onChange = {this.handleChange} placeholder = "Name of Brewery"/>
                     <button className = "button">Submit</button>  
                          
                 </form>
 
-                <form>
+
+                <form onSubmit = {this.handleCitySubmit}>
+                <input type = "text" name = "cityInput"  value = {this.state.cityInput} onChange = {this.handleChange} placeholder = "Name of City"/>
+                    <button className = "button">Submit</button>
 
                 </form>
                  
