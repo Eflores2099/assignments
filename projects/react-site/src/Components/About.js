@@ -3,7 +3,7 @@ import React from 'react'
 
 const About = () => {
     return (
-        <div className ="about">
+        <div className="about">
             <h2>Craft Beer Near Me</h2>
             <p>The newest brewery might be a lot closer than you think, and our “Find a Brewery” map is designed to show you just how close your new favorite small brewery may be. Our craft brewery list is up to date and we are bringing the data straight to you.
 
