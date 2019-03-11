@@ -18,10 +18,12 @@ class ResultPage extends Component {
                     <h1>{name}</h1>
                     <h3>{city}</h3>
                     <h3>{state}</h3>
-                
                     <a href= {website_url}>{website_url}</a>
                     </>
-                        :<div>no results found</div>
+                        :<div className = "error-message">
+                            <h2>We're sorry but that Brewery is not listed.</h2>
+
+                        </div>
                 
                 }
                 </div>

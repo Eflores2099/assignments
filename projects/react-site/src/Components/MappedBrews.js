@@ -5,15 +5,14 @@ import {withBrews} from '../Context/BrewsProvider'
 const MappedBrews = (props) => {
     console.log(props)
         const cityBrews = props.cityBrewsArr.map(brewery => 
-        <div>{brewery.name}
-        
-
+        <div>
+            {brewery.name}
         </div>)
         
+        
     return (
-        <div>
+        <div className = "mapped-brews">
             {cityBrews}
-
         </div>
     )
 }

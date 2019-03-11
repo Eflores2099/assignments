@@ -41,15 +41,24 @@ handleCitySubmit = (e) => {
         return (
             <div className = "form">
                 <form onSubmit ={this.handleSubmit}>
-                    <input type = "text" name = "userInput"  value = {this.state.userInput} onChange = {this.handleChange} placeholder = "Name of Brewery"/>
+                    <input className = "user-input" 
+                        type = "text" 
+                        name = "userInput"  
+                        value = {this.state.userInput} 
+                        onChange = {this.handleChange} 
+                        placeholder = "Name of Brewery"/>
                     <button className = "button">Submit</button>  
                          
                 </form>
 
 
                 <form onSubmit = {this.handleCitySubmit}>
-                <input type = "text" name = "cityInput"  value = {this.state.cityInput} onChange = {this.handleChange} placeholder = "Name of City"/>
-                    <button className = "button2">Submit</button>
+                <input className = "city-input" type = "text" 
+                    name = "cityInput"  
+                    value = {this.state.cityInput} 
+                    onChange = {this.handleChange} 
+                    placeholder = "Name of City"/>
+                <button className = "button2">Submit</button>
 
                 </form>
                  

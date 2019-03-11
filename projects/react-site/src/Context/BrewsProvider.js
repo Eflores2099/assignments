@@ -32,7 +32,7 @@ class BrewsProvider extends Component {
             console.log(response)
             this.setState({
 
-                cityBrewsArr: response.data
+                cityBrewsArr: response.data.length ? response.data : [{name: "", website_url: ""}]
             })
         })
     }
@@ -43,8 +43,12 @@ class BrewsProvider extends Component {
 
     render(){
         return(
-            <BrewsContext.Provider value = {{getBrews: this.getBrews, breweriesArr: this.state.breweriesArr, getCityBrews: this.getCityBrews,cityBrewsArr: this.state.cityBrewsArr}}>
-            {this.props.children} 
+            <BrewsContext.Provider value = {{getBrews: 
+                this.getBrews, breweriesArr: 
+                this.state.breweriesArr, getCityBrews: 
+                this.getCityBrews,cityBrewsArr: 
+                this.state.cityBrewsArr}}>
+                {this.props.children} 
             </BrewsContext.Provider>
 
            
