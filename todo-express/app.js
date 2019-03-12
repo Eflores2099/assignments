@@ -27,6 +27,8 @@ let todoList = [
 
 ]
 
+app.use(express.json())
+
 app.get('/todoList', (req, res) => {
     res.send(todoList)
 })
