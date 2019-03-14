@@ -73,4 +73,28 @@ bountyRouter.route('/')
     res.send(newBounty)
 })
 
+ bountyRouter.route("/:_id")
+ .get((req, res) => {
+    const foundBounty = bounty.find(bounty => bounty._id === req.params._id)
+    res.send(foundBounty)
+ })
+ .put((req,res)=>{
+     console.log(res.params)
+     const foundBounty= bounty.find(bounty =>bounty._id === req.params._id)
+     Object.assign(foundBounty, req.body)
+     res.send(foundBounty)
+ })
+ .delete((req,res) => {
+     const updatedBounty= bounty.filter(bounty => bounty._id !== req.params._id)
+     bounty = updatedBounty
+     res.send("Bounty successfully deleted")
+ })
+ 
+
+
+
+
+
+
+
 module.exports = bountyRouter

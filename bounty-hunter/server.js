@@ -5,7 +5,7 @@ const app = express()
 app.use(express.json())
 
 
-app.use("/bounty", require('./routes/routes.js'))
+app.use("/bounty", require('./routes/bountyRoutes.js'))
 
 
 
