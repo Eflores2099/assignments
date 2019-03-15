@@ -1,13 +1,15 @@
 import React from "react"
 import Bounty from './Bounty.js'
+import {withBounties} from '../context/BountyProvider'
 
 const BountyList = props => {
+    console.log(props)
     return (
         <div>
-            { props.bounty.map(bounty =>
+            { props.bounties.map(bounty =>
                 <Bounty
                 deleteBounty ={props.deleteBounty}
-                key={bounty._id}
+                key = {bounty._id}
                 {...bounty}
                 />) 
             }
@@ -15,4 +17,4 @@ const BountyList = props => {
     )
 }
 
-export default BountyList
+export default withBounties(BountyList)

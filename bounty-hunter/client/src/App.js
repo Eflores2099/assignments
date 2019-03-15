@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import BountyForm from './components/BountyForm.js'
-import Bounty from './components/Bounty.js'
 import BountyList from './components/BountyList.js'
 import { withBounties } from './context/BountyProvider'
 
@@ -18,6 +17,8 @@ class App extends Component{
         }
     }
     componentDidMount(){
+
+    
         this.props.getBounty()
     }
 
@@ -45,6 +46,7 @@ class App extends Component{
     render(){
         return (
             <div>
+            
                 <BountyForm
                     handleChange = {this.handleChange}
                     handleSubmit = {this.handleSubmit}

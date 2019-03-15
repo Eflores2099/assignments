@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React from 'react'
 
 
-const bountyForm = props => {
+const BountyForm = props => {
     const { handleSubmit,handleChange, firstName,lastName, isLiving, type } = props
         return(
             <form onSubmit = {handleSubmit}>
