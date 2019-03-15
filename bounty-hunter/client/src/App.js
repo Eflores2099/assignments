@@ -1,14 +1,18 @@
 import React, {Component} from 'react'
+import BountyForm from './components/BountyForm.js'
+import Bounty from './components/Bounty.js'
+import BountyList from './components/BountyList.js'
+import { withBounties } from './context/BountyProvider'
 
 
 
 class App extends Component{
     constructor(){
         super()
-        this.state= {
+        this.state = {
             firstName: "",
             lastName: "",
-            living: false,
+            isLiving: false,
             type: ""
 
         }
@@ -26,22 +30,29 @@ class App extends Component{
         })
     }
 
-    handleSubmit =e => {
+    handleSubmit = e => {
         e.preventDefault()
         const newBounty = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
-            living:this.state.living,
+            isLiving:this.state.isLiving,
             type: this.state.type
         }
         this.props.addBounty(newBounty)
-        this.setState({firstName: "", lastName: "", living:false, type: ""})
+        this.setState({firstName: "", lastName: "", isLiving: false, type: ""})
     }
 
     render(){
         return (
             <div>
-
+                <BountyForm
+                    handleChange = {this.handleChange}
+                    handleSubmit = {this.handleSubmit}
+                    {...this.state}
+                />
+                <BountyList 
+                    bounties = {this.props.wizards}
+                    deleteBounty = {this.props.deleteBounty}/>
             </div>
         )
     }
@@ -50,4 +61,4 @@ class App extends Component{
 
 
 
-export default App
+export default withBounties(App)
