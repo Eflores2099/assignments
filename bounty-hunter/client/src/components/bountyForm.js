@@ -2,8 +2,9 @@ import React from 'react'
 
 
 const BountyForm = props => {
-    const { handleSubmit,handleChange, firstName,lastName, isLiving, type } = props
+    const { handleSubmit, handleChange, firstName,lastName, isLiving, type } = props
         return(
+            
             <form onSubmit = {handleSubmit}>
                 <input
                     type= "text"
@@ -27,7 +28,7 @@ const BountyForm = props => {
                     value= {type}
                     onChange= {handleChange}/>
                         Jedi or Sith?:       
-
+                    <button>Submit</button>
             </form>
         )
 

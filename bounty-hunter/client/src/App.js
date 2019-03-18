@@ -11,7 +11,7 @@ class App extends Component{
         this.state = {
             firstName: "",
             lastName: "",
-            isLiving: false,
+            isLiving: true,
             type: ""
 
         }
@@ -40,7 +40,7 @@ class App extends Component{
             type: this.state.type
         }
         this.props.addBounty(newBounty)
-        this.setState({firstName: "", lastName: "", isLiving: false, type: ""})
+        this.setState({firstName: "", lastName: "", isLiving: true, type: ""})
     }
 
     render(){
@@ -53,7 +53,7 @@ class App extends Component{
                     {...this.state}
                 />
                 <BountyList 
-                    bounties = {this.props.wizards}
+                    bounties = {this.props.bounties}
                     deleteBounty = {this.props.deleteBounty}/>
             </div>
         )

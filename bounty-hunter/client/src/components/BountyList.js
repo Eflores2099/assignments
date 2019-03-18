@@ -5,7 +5,7 @@ import {withBounties} from '../context/BountyProvider'
 const BountyList = props => {
     console.log(props)
     return (
-        <div>
+        <div className="stuff">
             { props.bounties.map(bounty =>
                 <Bounty
                 deleteBounty ={props.deleteBounty}

@@ -60,6 +60,7 @@ let bounty = [
         _id: uuid()
     }
 ]
+
 bountyRouter.route('/')
 .get((req,res) => {
    res.send(bounty)

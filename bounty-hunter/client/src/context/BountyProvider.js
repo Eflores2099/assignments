@@ -14,16 +14,16 @@ class BountyProvider extends Component {
     getBounty = () => {
         console.log("hello")
         axios.get("/bounty").then(response => {
-            console.log("hello2")
             this.setState({
                 bounties: response.data
             })
         })
     }
     addBounty = newBounty => {
+        console.log(newBounty)
         axios.post("/bounty", newBounty).then (response => {
             this.setState(prevState  => ({
-                bounties: [...prevState.wizards, response.data]
+                bounties: [...prevState.bounties, response.data]
             }))
         })
     }
@@ -44,7 +44,7 @@ class BountyProvider extends Component {
                 value={{
                     bounties:this.state.bounties,
                     getBounty:this.getBounty,
-                    addBounties: this.addBounty,
+                    addBounty: this.addBounty,
                     deleteBounty:this.deleteBounty
                 }}>
                 {this.props.children}
