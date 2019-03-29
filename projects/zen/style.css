@@ -9,12 +9,15 @@
 
 header {
     font-size: 50px;
+    background-color: #edf4f0;
+    fill: #325050;
     background-image: url(huntington.jpg);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 200px;
     color:white;
+    text-align: start;
     
 }
 
@@ -22,8 +25,8 @@ main {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    font-size: 45px;
-    background-color:
+    font-size: 14.4px;
+    line-height: 32px;
 }
 
 .section1{
@@ -45,6 +48,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family:"libre Baskerville", sans-serif;
+    font-size:16px
 }
 
 .right-content{
