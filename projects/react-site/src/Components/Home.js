@@ -30,17 +30,16 @@ class Home extends Component {
         
 }
 
-handleCitySubmit = (e) => {
-    e.preventDefault()
-    this.props.getCityBrews(this.state.cityInput)
-    this.props.history.push('/MappedBrews')
+    handleCitySubmit = (e) => {
+        e.preventDefault()
+        this.props.getCityBrews(this.state.cityInput)
+        this.props.history.push('/MappedBrews')
 }
 
 
     render() {
         return (
-            
-                
+                    
                 <div className = "form">
                 
                     <form onSubmit ={this.handleSubmit}>

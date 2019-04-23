@@ -1,64 +1,302 @@
-const todosList = document.getElementById("container")
-const todoForm = document['add-todo-form']
+const listTodos = document.getElementById("container")
+const addForm = document['addform']
 const axios = require("axios")
+const addEditContainers = document.getElementByClassName('add-edit-container')
+const viewContainers = document.getElementByClassName('view-container')
+const containerIncomplete = document.getElementById('containerIncomplete')
+const containerComplete = document.getElementById('containerComplete')
+const cardContent = document.getElementByClassName('card-content')
 
-axios.get("https://api.vschool.io/erikf/todo").then (response => {
+
+function getData() {
+axios.get("https://api.vschool.io/erikf/todo").then ((res) => {
     
-const todos = response.data
-    listTodo(todos)
-
-}).catch((err => )
-    console.log(error)
-)
-
-function listTodos(todos){
+    const todos = res.data
+        listTodos(todos)
+    }).catch((error) => {
+    throw new Error(error)
+    })
+}
+// list all todos
+function listTodos(todos) {
     
-    const firstTodo = todosArr[0]
-    for(var i=0; i< todos.length; i++){
+    
+    for(let i = 0; i< todos.length; i++){
+
+        const id = todos[i]._id
+
         const todoContainer = document.createElement('div')
-        //  create elements, make i show on the DOM
+
+        //  create elements, make items show on the DOM
+        const card = document.createElement('div')
+        const cardContent = document.createElement('div')
         const title = document.createElement('h1')
-        const imgurl = document.createElement('img')
+        const editForm = document.createElement('form')
+        const image = document.createElement('a')
+        const title = document.createElement('p')
+        const description = document.createElement('h6')
+
         //  edit the element/ give it content
+        card.className= 'card'
+        card.id = id
+        editForm.name = "editform-" + id
         todoContainer.classList.add("todo-container")
-    title.textContent=todosArr[i].title
-    imgurl.setAttribute('src', todosArr[i].imgUrl)
-    if(todosArr[i].completed){
-        title.style.textDecoration = 'line-through'
+        title.textContent = todosArr[i].title
+        imgUrl.setAttribute('src', todosArr[i].imgUrl)
+
+        card.addEventListener("click", formToggleVisibility)
+
+        cardContent.classList = "view-container card-content"
+
+        title.classList = 'card-title'
+
+    
+    if(todos[i].completed) {
+        title.innerHTML = <p class ='card-title'>
+            <label>
+                <input type ='checkbox' onclick= "toggleCompleted(this, '${id}')" checked/>
+                <span class ='black-text'>${todos[i].title}</span>
+            </label>
+        </p>
+    } else {
+        title.innerHTML = <p class= "card-title">
+            <label>
+                <input type ="checkbox" onclick = "toggleCompleted(this, '${id}')"/>
+                <span class ="black-text">${todos[i].title}</span>
+            </label>
+        </p>
     }
-    // append it to the DOM
-    todosList.appendChild(title)
-    todoContainer.appendChild(imgUrl)
-    todoListContainer.appendChild(todoContainer)
+        if (todos[i].drescription) {
+            description.textContent = todos[i].description 
+            description.classList = 'green-text'        
+    }
+
+        if (todos[i].imgUrl) {
+            image.setAttribute("href", todos[i].imgUrl)
+            image.setAttribute("target", "_blank")
+            image.style = "margin-bottom: 20pt; margin-top: -20pt; display: block;"
+            image.innerHTML = `<i class="material-icons right">image</i>`
+    }
+
+
+
+
+    // form edits
+
+        const editFormContainer= document.createElement('div')
+            editFormContainer.classList = "card-content toggle-content add-edit-container"
+            editFormContainer.id = 'add-edit-' + card.id
+            editFormContainer.innerHTML = `
+
+            <p>
+                <input value="${todos[i].title || ''}" placeholder= 'Title' id= "title" type= "text" class= "validate" required/>
+                <label for ="title" class="hide-me">Title></label>
+            </p>
+
+            <p>
+                <input value="${todos[i].description || ''}" placeholder="Notes" id="description" type="text" class="validate" />
+                <label for="description" class="hide-me">Notes</label>
+            </p>
+
+            <p>
+                <input value="${todos[i].imgUrl || ''}" placeholder="Image URL" id="imgUrl" type="url" class="validate" />
+                <label for="imgUrl" class="hide-me">Image URL</label>
+            </p>`
+
+
+
+        card.appendChild(editForm)
+        cardContent.appendChild(title)
+
+
+        if (todos[i].description) cardContent.appendChild(description)
+
+        if(todos[i].imgUrl) cardContent.appendChild(image)
+// this adds cardContent to main container
+        editForm.appendChild(cardContent)
+        editForm.appendChild(editFormContainer)
+
+        if (todos[i].completed) {
+            containerComplete.appendChild(card)
+        } else {
+            containerIncomplete.appendChild(card)
+        }
+
     }
 }
 
-axios.post("https://api.vschool.io/erikf/todo", newTodo).then(response => {
-    console.log(response.data)
-}).catch((err => )
-    console.log(error)
-)
-
-const newTodo = getElementbyId('newTodo').value;
-
-    const todos= listTodos();
-    todos.push(newTodo)
-    
-
-
-
-
-todoForm.addEventListener('submit', (e) => {
+// form event listener for doing post request to API
+addForm.addEventListener("submit", (e) => {
     e.preventDefault()
+    // newTodo objet
     const newTodo = {
-        title:todoForm.title.value
+        title:addForm.title.value,
+        desription:addForm.description.value,
+        img: addForm.imgUrl.value,
+        completed:false
     }
 
+    // reset the form value to be empty
+    addForm.title.value = ""
+    addForm.description.value = ""
+    addForm.imgUrl.value = ""
 
-    todoForm.title.value = ""
-    axios.post("https://api.vschool.io/erikf/todo", newTodo).then(response =>{
-        todoListContainer.innerHTML =""
+
+    axios.post("https://api.vschool.io/erikf/todo", newTodo).then(res => {
         getData()
+        window.location.reload(true)
+    }).catch((error) => {
+        throw new Error(error)
     })
+
 })
+
+// function for submitting a PUT request to the API
+    function updateTodo(id) {
+        const formName = "editform-" + id
+        const editForm = document[formName]
+
+// generate updated todo object
+        const updateTodo = {
+            title:editForm.title.value,
+            description:editForm.description.value,
+            imgUrl: editForm.imgUrl.value,
+            completed:false
+        }
+
+
+// if the required title has been filled in
+        if (editForm.title.value) {
+            // PUT the data
+            axios.put("https://api.vschool.io/erikf/todo" + "/" + id, updateTodo).then (res => {
+                getData()
+                window.location.reload(true);
+
+            }).catch((error) => {
+                throw new Error(error)
+            })
+        }
+
+// Function for updating the completion of a todo
+
+function toggleCompleted(element, id) {
+
+    let updateTodo
+
+    if (element.checked) {
+        updateTodo = {
+            completed:true
+        }
+    }else {
+        updateTodo = {
+            completed:false
+        }
+    }
+
+    axios.put("https://api.vschool.io/erikf/todo" + id, updateTodo).then(res => {
+        getData()
+        window.location.reload(true)
+
+    }).catch((error) => {
+        throw new Error(error)
+    })
+
+
+}
+
+    // Function for deleting selected todos
+
+    function deleteTodo(id) {
+        axios.delete("https://api.vschool.io/erikf/todo" + "/" + id).then(res => {
+            getData()
+            window.location.reload(true)
+
+        }).catch((error) => {
+            throw new Error(error)
+        })
+        }
+    }
+
+    // Toggle visibility of Add & Edit Forms
+    // show Form- pass it the ID of the div you are showing/hiding
+
+    function formToggleVisibility(hardId) {
+        let id
+        let cardContentById
+
+        if (hardId === "editContainer" || hardId === "addContainer") {
+            // grab the selected div by its hardcoded ID
+            id = hardId
+            cardContentById = document.getElementById('add-edit-' + hardId)
+
+        } else {
+            // grab the selected div by its DB ID
+            id = this.id
+            cardContentById = document.getElementById("add-edit-" + id)
+        }
+
+        // toggle visibility of add div
+
+        // if container is visible, hide it by ID and all divs by class
+        if (cardContentById.style.display === "block") {
+
+        // initialize all add and edit containers to hidden
+        for (let i = 0; i < addEditContainers.length; i++) {
+            addEditContainers[i].style.display = "none"
+            addEditContainers[i].style.height= 0
+
+        }
+
+        // show the selected form
+            cardContentById.style.display = "none"
+            cardContentById.style.height= 0
+
+    //block is invisible? show it by ID and hide all other divs by class 
+    } else {
+
+        // initialize all add and edit containers to hidden
+        for (let i = 0; i < addEditContainers.length; i++) {
+            addEditContainers[i].style.display = "none"
+            addEditContainers[i].style.height = 0
+        }
+
+        // show seleceted div by its ID
+            cardContentById.style.display = "block"
+            cardContentById.style.height = "auto"
+
+    }
+
+    document.getElementById('add-edit-' +id).addEventListener('click', function (event) {
+        event.stopPropagation();
+    });
+
+
+
+    // Slide cards
+// window.onload = function () {
+//     const cards = document.getElementsByTagName('smart-card'),
+//         cardContainer = cards[0].parentElement;
+
+//     for (let i = 0; i < cards.length; i++) {
+//         const card = cards[i];
+
+//         card.dataSource = { content: 'Swipe left/right' };
+//         card.addEventListener('swipeleft', function (event) {
+//             this.classList.add('swipe-left');
+//         });
+//         card.addEventListener('swiperight', function (event) {
+//             this.classList.add('swipe-right');
+//         });
+//         card.addEventListener("animationend", function () {
+//             cardContainer.removeChild(this);
+//         });
+//     }
+// }
+
+}  
+
+
+
+// RUN THE APP
 getData()
+

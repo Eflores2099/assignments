@@ -1,37 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" type="text/css" href="../../source/styles/smart.default.css" />
+    <link rel="stylesheet" type="text/css" href="../../styles/demos.css" />
+    <link rel="stylesheet" type="text/css" href="../../styles/common.css" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+        media="screen,projection" />
+
+    
+
+    <script type="text/javascript"></script> 
+
+    <link rel="stylesheet" href="source/styles/smart.default.css" type="text/css" />  
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.0.22/webcomponents-lite.js"></script>  
+    <script type="text/javascript" src="source/smart.element.js"></script>  
+    <script type="text/javascript" src="source/smart.elements.js"></script>
+    <script src="index.js"></script>
+
     <title>My Todo List Project</title>
 </head>
-<body>
-        <h1> My Todo List </h1>
 
-        <form name = "add-todo-form">
-            <input id = "new-todo" type= "text">
-            <button>Add</button>
-            
-            
+<body class= "viewport">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 l6 list-container">
+                <h1></h1>
 
-        </form>
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Add to My Bored List</span>  
+                    </div>
+                    <div class="card-content toggle-content add-edit-container" id="add-edit-addContainer">
+                        <form name="addForm">
+                            <p>
+                                <input placeholder="Title" id="title" name="title" type="text" class="validate" required />
+                                <label for="title" class="hide-me">Title</label>
+                            </p>
 
-        <div id = "container">
-            <div>
-                <img src =" ">
+                            <p>
+                                <input placeholder="Notes" id="description" name="description" type="text" class="validate" />
+                                <label for="description" class="hide-me">Notes</label>
+                            </p>
+
+                            <p>
+                                <input placeholder="Image URL" id="imgUrl" name="imgUrl" type="url" class="validate" />
+                                <label for="imgUrl" class="hide-me">Image URL</label>
+                            </p>
+
+                            <button class="waves-effect waves-light light-blue btn"><i class="material-icons left"></i>Save</button>
+
+                        </form>
+                    </div>
+                </div>
+
+                <div id="containerIncomplete">
+                    <smart-cards>
+                    
+                        <smart-card class="basic-card" onclick="formToggleVisibility('editContainer')" item-template="cardTemplate">
+                            <a class="waves-effect waves-light lighten-4 secondary-content btn-flat blue-text" onclick="formToggleVisibility('editContainer')"><i
+                                class="material-icons right">edit</i></a>
+                            <form name="editForm">
+                                <div class="view-container card-content">
+                                    <p class="card-title">
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span> To Do</span>
+                                        </label>
+                                    </p>
+                                    <p></p>
+                                </div>
+                                <div class="card-content toggle-content add-edit-container" id="add-edit-editContainer">
+                                    <p>
+                                        <input placeholder="Title" id="title" type="text" class="validate" required />
+                                        <label for="title">Title</label>
+                                    </p>
+                                    <p>
+                                     <input placeholder="Notes" id="description" type="text" class="validate" />
+                                        <label for="description">Notes</label>
+                                    </p>
+                                
+                                    <p>
+                                        <input placeholder="Image URL" id="imgUrl" type="url" class="validate" />
+                                        <label for="imgUrl">Image URL</label>
+                                    </p>
+                                    <button class="waves-effect waves-light light-blue btn"><i class="material-icons left"></i>update</button>
+                                    <button class="waves-effect waves-light pink secondary-content btn"><i class="material-icons left"></i>delete</button>
+                                </div>
+                            </form>
+                        </smart-card>
+                    </smart-cards>
+
+                    <template id="cardTemplate">
+                        <div class="card-content">{{content}}</div>
+                    </template>
+
+
+                </div>
+
             </div>
 
+            <div class="list-container">
+                <h1></h1>
 
+                <div id="containerComplete">
 
+                </div>
 
-
-
-
+            </div>
 
         </div>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="app.js"></script> 
+
+    </div>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="app.js"></script>
 </body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
