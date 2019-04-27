@@ -66,7 +66,7 @@
                     
                     
                  
-                    <div class= "card" id='id'>
+                    <!-- <div class= "card" id='id'>
                         <a class= "waves-effect waves-light lighten-4 secondary-content btn-flat blue-text" onclick="formToggleVisibility('editContainer')"><i
                                 class="material-icons right">edit</i></a>
                         <form name = "editForm">
@@ -95,7 +95,7 @@
                                     <label for="imgUrl">Image URL</label>
                                 </p>
                                 <button class="waves-effect waves-light blue btn" onclick = "updateTodo('id')"><i class="material-icons left">save</i>update</button>
-                                <button class="waves-effect waves-light green secondary-content btn" onclick= "deleteTodo('${id}')"><i class= "material-icons left">delete</i>delete</button>
+                                <button class="waves-effect waves-light green secondary-content btn" onclick= "deleteTodo('id')"><i class= "material-icons left">delete</i>delete</button>
                             </div>
                         </form>
 
@@ -103,7 +103,38 @@
                     
                 </div>
 
+            </div> -->
+
+            <div class = "card" id = "id">
+                <div>
+                    <a class= "waves-effect waves-light blue btn" onclick= "formToggleVisibility('editContainer')">
+                        <i class= "material-icons right">edit</i>
+                    </a>
+                </div>
+                <form name= "editform-id">
+                    <div class= "view-container card-content">
+                        <p class ="card-title">
+                            <label>
+                                <input type = "checkbox" onclick = "toggleCompleted(this, 'id')">
+                                <span class ="black-text"></span>
+                            </label>
+                        </p>
+                        <h6 class="grey-text"></h6>
+                        <a href="url" target="_blank" style="margin-bottom: 20pt; margin-top: -20pt; display:block;">
+                            <i class="material-icons right">image</i>
+                        </a>
+                    </div> 
+                <div class= "card-content toggle-content add-edit-container" id ="add-edit-id">
+                    <p>
+                        <input value= "" placeholder = "Title" id="title" type="text" class= "validate" required />
+                            <label for= "title">Title</label>
+                    </p>
+
+                </div>       
+                </form>
             </div>
+
+
 
             <div class= "col s12 l6 list-container">
                 <h1>Completed List</h1>

@@ -4,6 +4,7 @@ const containerIncomplete = document.getElementById('containerIncomplete')
 const addEditContainers = document.getElementsByClassName('add-edit-container')
 const containerComplete = document.getElementById('containerComplete')
 const cardContent = document.getElementById('card-content')
+const viewContainers = document.getElementsByClassName('view-container')
 
 
 
@@ -36,6 +37,7 @@ function listTodos(todos) {
         const editIcon = document.createElement('div')
         const image = document.createElement('a')
         const title = document.createElement('p')
+        const description =document.createElement('h6')
         
 
         //  edit the element/ give it content
