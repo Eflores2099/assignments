@@ -1,14 +1,9 @@
 const addForm = document['addForm']
-// const axios = require("axios")
 const containerIncomplete = document.getElementById('containerIncomplete')
 const addEditContainers = document.getElementsByClassName('add-edit-container')
 const containerComplete = document.getElementById('containerComplete')
 const cardContent = document.getElementById('card-content')
 const viewContainers = document.getElementsByClassName('view-container')
-
-
-
-
 
 function getData() {
 axios.get("https://api.vschool.io/erikf/todo").then ((res) => {
@@ -21,14 +16,12 @@ axios.get("https://api.vschool.io/erikf/todo").then ((res) => {
 }
 // list all todos
 function listTodos(todos) {
-    
+    todos.reverse()
     
     for(let i = 0; i < todos.length; i++){
 
         // grab the current ID
         const id = todos[i]._id
-
-        
 
         //  create elements, make items show on the DOM
         const card = document.createElement('div')
@@ -37,15 +30,32 @@ function listTodos(todos) {
         const editIcon = document.createElement('div')
         const image = document.createElement('a')
         const title = document.createElement('p')
-        const description =document.createElement('h6')
+        const description = document.createElement('h6')
+        const deleteButton = document.createElement('button')
+        const updateButton = document.createElement('button')
         
 
         //  edit the element/ give it content
         card.className= 'card'
         card.id = id
         editForm.name = "editform-" + id
+        deleteButton.textContent = "delete"
+        deleteButton.classList.add("waves-effect")
+        deleteButton.classList.add("waves-light")
+        deleteButton.classList.add("green")
+        deleteButton.classList.add("secondary-content")
+        deleteButton.classList.add("btn")
+
+        updateButton.textContent= "Update"
+        updateButton.classList.add("waves-effect")
+        updateButton.classList.add("waves-light")
+        updateButton.classList.add("blue")
+        updateButton.classList.add("btn")
 
         card.addEventListener("click", formToggleVisibility)
+
+        deleteButton.addEventListener("click", (e) => deleteTodo(e,id))
+        updateButton.addEventListener("click", (e) => updateTodo(e,id))
 
         editIcon.innerHTML =` 
             <a class="waves-effect waves-light lighten-4 secondary-content btn-flat blue-text" onclick="formToggleVisibility('editContainer')"><i
@@ -88,7 +98,7 @@ function listTodos(todos) {
 
     // Edit Forms 
 
-        const editFormContainer= document.createElement('div')
+        const editFormContainer = document.createElement('div')
             editFormContainer.classList = "card-content toggle-content add-edit-container"
             editFormContainer.id = 'add-edit-' + card.id
             editFormContainer.innerHTML = `
@@ -112,6 +122,9 @@ function listTodos(todos) {
         card.appendChild(editIcon)
         card.appendChild(editForm)
         cardContent.appendChild(title)
+        card.appendChild(deleteButton)
+        card.appendChild(updateButton)
+        
 
 
         if (todos[i].description) cardContent.appendChild(description)
@@ -152,7 +165,6 @@ addForm.addEventListener("submit", (e) => {
         // Post Data
     axios.post("https://api.vschool.io/erikf/todo", newTodo).then(res => {
         getData()
-        console.log("where is my data")
         window.location.reload(true)
 
     }).catch((error) => {
@@ -162,7 +174,8 @@ addForm.addEventListener("submit", (e) => {
 })
 
 // function for submitting a PUT request to the API
-    function updateTodo(id) {
+    function updateTodo(e,id) {
+        e.stopPropagation()
         const formName = "editform-" + id
         const editForm = document[formName]
 
@@ -216,7 +229,8 @@ function toggleCompleted(element, id) {
 
     // Function for deleting selected todos
 
-    function deleteTodo(id) {
+    function deleteTodo(e,id) {
+        e.stopPropagation()
         axios.delete("https://api.vschool.io/erikf/todo" + "/" + id).then(res => {
             getData()
             window.location.reload(true)

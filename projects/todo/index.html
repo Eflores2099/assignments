@@ -66,7 +66,7 @@
                     
                     
                  
-                    <!-- <div class= "card" id='id'>
+                    <div class= "card" id = 'id'>
                         <a class= "waves-effect waves-light lighten-4 secondary-content btn-flat blue-text" onclick="formToggleVisibility('editContainer')"><i
                                 class="material-icons right">edit</i></a>
                         <form name = "editForm">
@@ -82,20 +82,20 @@
                             </div>
                             <div class = "card-content toggle-content add-edit-container" id = "add-edit-editContainer">
                                 <p>
-                                    <input placeholder = "Title" id="title" type="text" class="validate" required />
-                                    <label for="title">Title</label>
+                                    <input placeholder = "Title" id = "title" type= "text" class= "validate" required />
+                                    <label for= "title">Title</label>
                                 </p>
                                 <p>
-                                    <input placeholder="Notes" id="description" type="text" class="validate" />
-                                    <label for="description">Notes</label>
+                                    <input placeholder= "Notes" id = "description" type= "text" class= "validate" />
+                                    <label for= "description">Notes</label>
                                 </p>
 
                                 <p>
-                                    <input placeholder= "Image URL" id= "imgUrl" type="url" class= "validate" />
+                                    <input placeholder = "Image URL" id = "imgUrl" type= "url" class= "validate" />
                                     <label for="imgUrl">Image URL</label>
                                 </p>
-                                <button class="waves-effect waves-light blue btn" onclick = "updateTodo('id')"><i class="material-icons left">save</i>update</button>
-                                <button class="waves-effect waves-light green secondary-content btn" onclick= "deleteTodo('id')"><i class= "material-icons left">delete</i>delete</button>
+                                <button class="waves-effect waves-light blue btn" onclick = "updateTodo('id')"><i class = "material-icons left">save</i>update</button>
+                                <button class="waves-effect waves-light green secondary-content btn" onclick = "deleteTodo('id')"><i class= "material-icons left">delete</i>delete</button>
                             </div>
                         </form>
 
@@ -103,36 +103,50 @@
                     
                 </div>
 
-            </div> -->
+            </div>
 
-            <div class = "card" id = "id">
+            <!-- <div class = "card" id = "id">
                 <div>
-                    <a class= "waves-effect waves-light blue btn" onclick= "formToggleVisibility('editContainer')">
-                        <i class= "material-icons right">edit</i>
+                    <a class = "waves-effect waves-light blue btn" onclick = "formToggleVisibility('editContainer')">
+                        <i class = "material-icons right">edit</i>
                     </a>
                 </div>
-                <form name= "editform-id">
-                    <div class= "view-container card-content">
-                        <p class ="card-title">
+                <form name = "editform-${'id'}">
+                    <div class = "view-container card-content">
+                        <p class = "card-title">
                             <label>
                                 <input type = "checkbox" onclick = "toggleCompleted(this, 'id')">
-                                <span class ="black-text"></span>
+                                <span class = "black-text"></span>
                             </label>
                         </p>
                         <h6 class="grey-text"></h6>
-                        <a href="url" target="_blank" style="margin-bottom: 20pt; margin-top: -20pt; display:block;">
-                            <i class="material-icons right">image</i>
+                        <a href= "url" target = "_blank" style = "margin-bottom: 20pt; margin-top: -20pt; display:block;">
+                            <i class = "material-icons right">image</i>
                         </a>
                     </div> 
-                <div class= "card-content toggle-content add-edit-container" id ="add-edit-id">
+                <div class= "card-content toggle-content add-edit-container" id = "add-edit-id">
                     <p>
-                        <input value= "" placeholder = "Title" id="title" type="text" class= "validate" required />
-                            <label for= "title">Title</label>
+                        <input value= "" placeholder = "Title" id = "title" type="text" class= "validate" required />
+                            <label for= "title" class = "hide-me">Title</label>
                     </p>
+                    <p>
+                        <input value = "" placeholder = "Notes" id = "description" type= "text" class = "validate">
+                            <label for = "description" class = "hide-me">Notes</label>
+                    </p>
+                    <p>
+                        <input value = "" placeholder = "Image URL" id = "imgUrl" type = "url" class = "validate">
+                            <label for = "imgURL" class="hide-me">Image URL</label>
+                    </p>
+                        <a class="waves-effect waves-light light-blue btn" onclick = "updateTodo('${todos[i]._id}')">
+                            <i class = "material-icons left">save</i>"update"
+                        </a>
+                        <a class = "waves-effect waves-light green secondary-content btn" onclick = "deleteTodo('id')">
+                            <i class = "material-icons left">delete</i>"delete"
+                        </a>    
 
                 </div>       
                 </form>
-            </div>
+            </div> -->
 
 
 
