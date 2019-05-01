@@ -187,7 +187,7 @@ addForm.addEventListener("submit", (e) => {
             
         }
 
-    }
+    
 // if the required title has been filled in
         if (editForm.title.value) {
             // PUT the data
@@ -199,7 +199,7 @@ addForm.addEventListener("submit", (e) => {
                 throw new Error(error)
             })
         }
-    
+    }
 // Function for updating the completion of a todo
 
 function toggleCompleted(element, id) {
