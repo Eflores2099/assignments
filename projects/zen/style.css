@@ -16,6 +16,21 @@ body{
     font-size: 70%;
 }
 
+a {
+    text-decoration: none;
+    color: #0d8ba1;
+}
+
+a:visited {
+    color: #1a5952;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+    color: #0599c2;
+}
+
 
 header {
     height: 230px;
@@ -27,67 +42,29 @@ header {
     background-size: auto, auto, auto, cover;
 }
 
-
-
-
-
-
-
-/* #container {
-    display: grid;
-    grid-template-columns: 1fr
-}
-
-header {
-    font-size: 50px;
-    background-color: #edf4f0;
-    fill: #325050;
-    background-image: url(huntington.jpg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-    color:white;
-    text-align: start;
-    
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    font-size: 14.4px;
-    line-height: 32px;
-}
-
-.section1{
-    
-    
-}
-
-.section2{
-    background-color:seagreen;
-    background-image: url(bamboo.png);
+h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: normal;
+    padding: 0 10%;
+    margin: 0;
+    color: #fff;
+    padding-top: 0;
+    padding-bottom: 5px;
+    border-bottom: none;
 
 }
 
 
 
-footer {
-    height: 50px;
-    background-color: violet;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family:"libre Baskerville", sans-serif;
-    font-size:16px
-}
 
-.right-content{
-    background-color: cornflowerblue;
-}
 
-@media only screen and (min-width: 700px){
+
+
+
+
+/* @media only screen and (min-width: 700px){
     #container {
         grid-template-columns: 3fr 1fr;
     }
@@ -101,4 +78,4 @@ footer {
         grid-row: 1 / span 3;
         height: 100%;
     }
-} */
+}  */
