@@ -1,8 +1,39 @@
 * {
-    margin: 0;
+    box-sizing:border-box;
 }
 
-#container {
+html,
+body{
+    margin: 0;
+    padding:0;
+
+}
+
+body{
+    color:#325050;
+    background:#fff;
+    font-family: 'Libre Baskerville', sans-seif;
+    font-size: 70%;
+}
+
+
+header {
+    height: 230px;
+    padding: 20px 0 70px 0;
+    background-repeat:repeat, repeat, repeat, no-repeat;
+    background-attachment: fixed, fixed,fixed, scroll;
+    background-image: url("contours.png"), url("noise.png"), url("gridlines.png"), url("huntington.jpg");
+    background-position: 0 0, 0 0, -5px -25px, 0 50%;
+    background-size: auto, auto, auto, cover;
+}
+
+
+
+
+
+
+
+/* #container {
     display: grid;
     grid-template-columns: 1fr
 }
@@ -70,4 +101,4 @@ footer {
         grid-row: 1 / span 3;
         height: 100%;
     }
-}
+} */

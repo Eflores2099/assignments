@@ -39,6 +39,7 @@ function listTodos(todos) {
         card.className= 'card'
         card.id = id
         editForm.name = "editform-" + id
+        
         deleteButton.textContent = "delete"
         deleteButton.classList.add("waves-effect")
         deleteButton.classList.add("waves-light")
