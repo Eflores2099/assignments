@@ -1,3 +1,18 @@
+
+/* icons */
+@font-face {
+    font-family: 'verdemoderna';
+    src: url('verdemoderna.eot');
+    src: url('verdemoderna.eot?#iefix') format('embedded-opentype'),
+        url('verdemoderna.woff') format('woff'),
+        url('verdemoderna.ttf') format('truetype'),
+        url('verdemoderna.svg#verdemoderna') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 * {
     box-sizing:border-box;
 }
@@ -19,6 +34,7 @@ body{
 a {
     text-decoration: none;
     color: #0d8ba1;
+    transition: all 0.25s ease-out;
 }
 
 a:visited {
@@ -29,6 +45,13 @@ a:hover,
 a:focus {
     text-decoration: underline;
     color: #0599c2;
+}
+
+abbr{
+    border:none;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.01em;
 }
 
 
@@ -70,10 +93,115 @@ h1::before {
     margin: -20px 20px 0 0;
 }
 
+h2 {
+    display: block;
+    padding: 0 10%;
+    margin: 0;
+    font-weight: normal;
+    font-size: 1.6em;
+    font-style: italic;
+    padding-top: 5px;
+    padding-bottom: 30px;
+    border-top: none;
+    color: #ffffff99;
+}
 
+h2::before{
+    content: "";
+    padding:50px;
+}
 
+h3 {
+    text-transform: uppercase;
+    margin: 2em 0 0 0;
+    color: #2e484c;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.8em;
+    font-weight: normal;
+    
+}
 
+p {
+    margin: 0.75em 0;
+    line-height: 2;
+}
 
+.page-wrapper {
+    position: relative;
+}
+
+.summary,
+.preamble {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.supporting h3 {
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+.intro a:hover::before {
+    color:#fff;
+    background:#357d93;
+}
+
+div.participation,
+div.benefits {
+    background-color: #8abc9f80;
+    background-image: url(contours-opaque.png), url(gridlines-opaque.png), url(bamboo.png);
+    background-size: auto, auto, cover;
+    background-repeat: repeat, repeat, no-repeat;
+    background-attachment: scroll, scroll, fixed;
+}
+
+div.benefits {
+    margin-bottom: 3em;
+    padding-bottom: 3em;
+}
+
+div.participation p,
+div.benefits p {
+    margin-bottom: 0;
+}
+
+div.participation h3,
+div.benefits h3 {
+    padding-top: 50px;
+    margin-top: 0;
+}
+
+.sidebar {
+    background: #edf4f0;
+}
+
+.sidebar a {
+display: none;
+}
+
+.sidebar a {
+    color: #607476;
+    text-decoration: none;
+}
+
+.sidebar a:hover,
+.sidebar a:focus {
+    color: #49968e;
+}
+
+.sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.design-selection ul,
+.zen-resources ul {
+    margin: 0;
+}
 
 
 
