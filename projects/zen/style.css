@@ -1,3 +1,16 @@
+/* icons */
+@font-face {
+    font-family: 'verdemoderna';
+    src: url('verdemoderna.eot');
+    src: url('verdemoderna.eot?#iefix') format('embedded-opentype'),
+        url('verdemoderna.woff') format('woff'),
+        url('verdemoderna.ttf') format('truetype'),
+        url('verdemoderna.svg#verdemoderna') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 
 * {
     box-sizing:border-box;
@@ -225,7 +238,7 @@ display: none;
 
 .design-selection .design-name,
 .zen-resources a,
-li.viewall a {
+li.view-all a {
     display: block;
     text-transform: uppercase;
     font-family: 'Julius Sans One', sans-serif;
@@ -273,7 +286,7 @@ li.viewall a {
     list-style: none;
 }
 
-.design-archives li.viewall  {
+.design-archives li.view-all  {
     top : 0;
     left: 0;
     line-height: 50px;
@@ -313,7 +326,7 @@ li.viewall a {
     white-space: nowrap;
 }
 
-.design-archives .viewall a {
+.design-archives .view-all a {
     z-index: 2;
     width: 100%;
     padding: 12px 0 0 0;
@@ -339,9 +352,9 @@ li.viewall a {
     -webkit-font-smoothing: antialiased;
 }
 
-.design-archives .viewall a:hover,
-.design-archives .viewall a:focus,
-.design-archives .viewall a:active,
+.design-archives .view-all a:hover,
+.design-archives .view-all a:focus,
+.design-archives .view-all a:active,
 .design-archives a:hover::before,
 .design-archives a:focus::before,
 .design-archives a:active::before {
@@ -689,7 +702,7 @@ li {
     /* Main layout */
 
     nav,
-    .supporting {
+    .main-support {
         display: inline;
     }
 
@@ -812,7 +825,7 @@ li {
         text-decoration: none;
     }
 
-    .design-archives .viewall a:hover,
+    .design-archives .view-all a:hover,
     .design-archives a:hover::before {
         background-color: #ffffff33;
     }
