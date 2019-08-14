@@ -24,7 +24,7 @@ const App = () => {
               imgURL: "https://images.unsplash.com/photo-1488747279002-c8523379faaa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
         },  {
               place: "Lebanon",
-              price: 400,
+              price: 5500,
               imgURL: "https://images.unsplash.com/photo-1501960645408-12c9bcfca49f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
         },  {
               place: "Prague",

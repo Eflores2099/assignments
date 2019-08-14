@@ -1,5 +1,5 @@
 import React from 'react'
-import VacationList from './VacationList.js'
+
 
 const Destination = (props) => {
     // console.log(props)
@@ -16,7 +16,7 @@ const Destination = (props) => {
     return(
         
         <div>
-        <div className="photo" style={{ backgroundImage: "url(" + props.imgURL + ")" }}>
+            <div className="photo" style={{ backgroundImage: "url(" + props.imgURL + ")" }}>
                 <h2>{props.place}</h2>
             </div>
             <p>${props.price}</p>
