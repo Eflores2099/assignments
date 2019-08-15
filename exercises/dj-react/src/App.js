@@ -19,30 +19,30 @@ class App extends React.Component {
     handleToggleAllBW1 = () => {
         this.setState((prevState) => {
             return ({
-                bg1: (prevState.bg1 === "white") ? "black" : "white",
-                bg2: (prevState.bg2 === "white") ? "black" : "white",
-                bg3: (prevState.bg3 === "white") ? "black" : "white",
-                bg4: (prevState.bg4 === "white") ? "black" : "white",
+                bg1: (prevState.bg1 === "white") ? "green" : "white",
+                bg2: (prevState.bg2 === "white") ? "green" : "white",
+                bg3: (prevState.bg3 === "white") ? "green" : "white",
+                bg4: (prevState.bg4 === "white") ? "green" : "white",
             })
         })
     }
 
     handleTopToPurple = () => {
         this.setState({
-            bg1: "purple",
-            bg2: "purple"
+            bg1: "red",
+            bg2: "red"
         })
     }
 
     handleBottomLeftColor = () => {
         this.setState({
-            bg3: "cornflowerblue"
+            bg3: "blue"
         })
     }
 
     handleBottomRightColor = () => {
         this.setState({
-            bg4: "orange"
+            bg4: "violet"
         })
     }
     
