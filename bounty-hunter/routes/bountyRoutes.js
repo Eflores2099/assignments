@@ -3,7 +3,79 @@ const bountyRouter = express.Router()
 const Bounty = require('../models/bountyData.js')  //Name to create new document
 const uuid = require("uuid/v4")
 
-
+// let bounties = [
+//     {
+//         firstName: "Jango",
+//         lastName: "Fett",
+//         living: false,
+//         bountyAmount: 100,
+//         type: "Sith",
+//         _id: uuid(),
+//     },{
+//         firstName: "Boba",
+//         lastName: "Fett",
+//         living: true,
+//         bountyAmount: 100,
+//         type: "Sith",
+//         _id: uuid(),
+//     },{
+//         firstName: "Aurra Sing",
+//         lastName: "",
+//         living: true,
+//         bountyAmount: 100,
+//         type: "Sith",
+//         _id: uuid(),
+//     },{
+//         firstName: "Boosk",
+//         lastName: "",
+//         living: true,
+//         bountyAmount: 100,
+//         type: "Sith",
+//         _id: uuid(),
+//     },{
+//         firstName: "Ketsu",
+//         lastName: "Onyo",
+//         living: true,
+//         bountyAmount: 100,
+//         type: "Jedi",
+//         _id: uuid(),
+//     },{
+//         firstName: "Embo",
+//         lastName: "",
+//         living: true,
+//         bountyAmount: 100,
+//         type: "Sith",
+//         _id: uuid(),
+//     },{
+//         firstName: "Cad",
+//         lastName: "Bane",
+//         living: true,
+//         bountyAmount: 100,
+//         type: "Sith",
+//         _id: uuid(),
+//     },{
+//         firstName: "Zam",
+//         lastName: "Wesell",
+//         living: true,
+//         bountyAmount: 100,
+//         type: "Sith",
+//         _id: uuid(),
+//     },{
+//         firstName: "Dengar",
+//         lastName: "",
+//         living: true,
+//         bountyAmount: 100,
+//         type: "Sith",
+//         _id: uuid(),
+//     },{
+//         firstName: "IG-88",
+//         lastName: "",
+//         living: true,
+//         bountyAmount: 100,
+//         type: "Sith",
+//         _id: uuid(),
+//     }
+// ]
 
 
  // GET ALL
