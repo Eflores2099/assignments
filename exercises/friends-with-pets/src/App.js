@@ -1,7 +1,6 @@
 import React from 'react'
 import FriendList from './FriendList.js'
 
-const App = () => {
     const friends = [
         {
           name: "Ben",
@@ -59,11 +58,9 @@ const App = () => {
           ]
         }
       ]
-return (
-    <div>
-        <FriendList friends = {friends}/>
-    </div>
-)
+const App = () => {
+      
+return (<FriendList data = {friends} />)
 
 }   
   
