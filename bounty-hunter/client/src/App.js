@@ -6,56 +6,92 @@ import { withBounties } from './context/BountyProvider'
 
 
 class App extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             firstName: "",
             lastName: "",
             isLiving: true,
-            type: ""
+            bountyAmount: undefined,
+            bountyType: "jedi"
 
         }
     }
-    componentDidMount(){
 
-    
-        this.props.getBounty()
+    componentDidMount() {
+        this.props.getBounties()
     }
 
-    handleChange = e => {
-        const value = e.target.type === "checkbox" 
-            ? e.target.checked 
-            : e.target.value
+    handleChange = event => {
+        const target = event.target;
+        const value = target.type === "checkbox" ? target.checked : target.value;
+        const name = target.name;
+
         this.setState({
-            [e.target.name] : value
-        })
+            [name] : value
+        });
     }
 
-    handleSubmit = e => {
-        e.preventDefault()
+    handleSubmit = event => {
+        event.preventDefault()
         const newBounty = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             isLiving:this.state.isLiving,
-            type: this.state.type
+            bountyAmount: this.state.bountyAmount,
+            bountyType: this.state.bountyType
         }
         this.props.addBounty(newBounty)
-        this.setState({firstName: "", lastName: "", isLiving: true, type: ""})
+        this.setState(
+            {
+                firstName: "", 
+                lastName: "", 
+                isLiving: true, 
+                bountyAmount:"",
+                bountyType: "jedi"
+            }
+        )
     }
 
-    render(){
+render() {
+    console.log("this.props.bounties")
+        console.log(this.props.bounties)
+        console.log("this.state.isLiving")
+        console.log(this.state.isLiving)
+        console.log("this.state.bountyType")
+        console.log(this.state.bountyType)   
+
+
         return (
             <div>
-            
-                <BountyForm
-                    handleChange = {this.handleChange}
-                    handleSubmit = {this.handleSubmit}
-                    {...this.state}
-                />
-                <BountyList 
-                    bounties = {this.props.bounties}
-                    deleteBounty = {this.props.deleteBounty}/>
+
+                <div id="header-container">
+
+                    <div className="vertical-align">
+                        <h1><span className="hidden">The Original Bounty Hunter</span></h1>
+                    </div>
+
+                    <div className="card" id="add-form">
+                    <BountyForm
+                        btnText="Add Bounty"
+                        handleChange={this.handleChange}
+                        handleSubmit={this.handleSubmit}
+                        {...this.state}
+                    />
+                    </div>
+
+                </div>
+
+                <div id="container">
+
+                <BountyList
+                    bounties={this.props.bounties}
+                    deleteBounty={this.props.deleteBounty}
+                    updateBounty={this.props.updateBounty} />
+                </div>
+
             </div>
+
         )
     }
 

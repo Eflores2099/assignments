@@ -10,5 +10,5 @@ import './style.css'
 ReactDOM.render(
     <BountyProvider>
         <App />
-    </BountyProvider>   
- ,document.getElementById('root'))
+    </BountyProvider>,   
+ document.getElementById('root'))

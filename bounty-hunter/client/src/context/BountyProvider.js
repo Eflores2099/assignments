@@ -12,28 +12,36 @@ class BountyProvider extends Component {
     }
 
     getBounty = () => {
-        console.log("hello")
         axios.get("/bounty").then(response => {
             this.setState({
-                bounties: response.data
+                bounties: response.data.reverse()
             })
         })
     }
+
     addBounty = newBounty => {
         console.log(newBounty)
         axios.post("/bounty", newBounty).then (response => {
             this.setState(prevState  => ({
-                bounties: [...prevState.bounties, response.data]
+                bounties: [response.data, ...prevState.bounties]
             }))
         })
     }
 
     deleteBounty = _id => {
-        axios.delete(`/bounty/${_id}`).then(response => {
+        axios.delete(`/bounty/v1/${_id}`).then(response => {
             alert(response.data)
             this.setState(prevState => ({
                 bounties: prevState.bounties.filter(bounty => bounty._id !== _id)
 
+            }))
+        })
+    }
+
+    updateBounty = (_id, updates) => {
+        axios.put(`/bounty/v1/${_id}`, updates).then(response => {
+            this.setState(prevState => ({
+                bounties:prevState.bounties.map(bounty => bounty._id === _id ? response.data : bounty)
             }))
         })
     }
@@ -43,9 +51,10 @@ class BountyProvider extends Component {
             <BountyContext.Provider
                 value={{
                     bounties:this.state.bounties,
-                    getBounty:this.getBounty,
+                    getBounties:this.getBounties,
                     addBounty: this.addBounty,
-                    deleteBounty:this.deleteBounty
+                    deleteBounty:this.deleteBounty,
+                    updateBounty: this.updateBounty
                 }}>
                 {this.props.children}
             </BountyContext.Provider>
