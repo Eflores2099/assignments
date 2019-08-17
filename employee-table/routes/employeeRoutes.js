@@ -11,7 +11,7 @@ employeeRouter.get('/', (req, res) => {
             return res.send(err)
         }
         //Send back response
-        return res.status(200).send(bounties)
+        return res.status(200).send(employees)
     })
 })
 
@@ -39,7 +39,7 @@ employeeRouter.post('/', (req, res) => {
             console.log(err)
             return res.send(err)
         }
-        return res.status(201).send(newEmployeeOject)
+        return res.status(201).send(newEmployeeObject)
     })
 })
 
