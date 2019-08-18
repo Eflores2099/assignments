@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
+import AddEmployeeForm from './Components/AddEmployeeForm.js'
 import { withEmployees } from './context/EmployeesProvider'
 
 
 
 class App extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state ={
-            EmployeeId:"",
+            employeeId:"",
             firstName: "",
             lastName: "",
             email: "",
@@ -18,6 +19,9 @@ class App extends Component {
     componentDidMount() {
         this.props.getEmployees()
     }
+
+    
+
 
     handleSubmit = e => {
         e.preventDefault()
