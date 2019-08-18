@@ -1,6 +1,7 @@
 const express =require('express')
-const employeeRouter = express.Router
+const employeeRouter = express.Router()
 const Employee = require('../models/employee.js')//to create new employee
+const uuid = require("uuid/v4")
 
 //GET ALL Employees
 employeeRouter.get('/', (req, res) => {
