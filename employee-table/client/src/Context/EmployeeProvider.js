@@ -28,7 +28,7 @@ class EmployeeProvider extends Component {
         }
 
         deleteEmployee = _id => {
-            axios.delete(`/bounty/v1/${_id}`, updates).then(response => {
+            axios.delete(`/bounty/v1/${_id}`).then(response => {
                 this.setState(prevState => ({
                     employees: prevState.employees.filter(employee => employee._id !== _id)
                 }))
