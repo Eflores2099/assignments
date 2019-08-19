@@ -1,10 +1,11 @@
 const mongoose = require ('mongoose')
 const Schema = mongoose.Schema
 
+
 //Schema defines what the data should look like.
 const employeeSchema = new Schema({
 
-    employeeNumber: {
+    employeeId: {
         type: String
     },
 
@@ -20,7 +21,7 @@ const employeeSchema = new Schema({
         type: String
         // required: true
     },
-    phoneNumber: String,
+    phoneNum: String,
         type: String
         // required: true
 })

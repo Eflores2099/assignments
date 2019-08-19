@@ -1,7 +1,7 @@
 import React from 'react'
 
 const AddEmployeeForm = props => {
-    const {handleSubmit, handleChange, employeeId, firstName, lastName, email, phoneNumber, btnText} = props
+    const {handleSubmit,handleChange, employeeId,firstName, lastName, email, phoneNum, btnText} = props
     return (
         <form onSubmit={handleSubmit}>
 
@@ -35,8 +35,8 @@ const AddEmployeeForm = props => {
                 required/> 
             <input
                 type="text"
-                name= "phoneNumber"
-                value={phoneNumber}
+                name= "phoneNum"
+                value={phoneNum}
                 onChange={handleChange}
                 placeholder="Phone #"
                 required/>

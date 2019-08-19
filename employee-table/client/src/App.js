@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import AddEmployeeForm from './Components/AddEmployeeForm.js'
-import { withEmployees } from './context/EmployeesProvider'
+import { withEmployees } from './context/EmployeeProvider.js'
 
 
 
@@ -12,7 +12,7 @@ class App extends Component {
             firstName: "",
             lastName: "",
             email: "",
-            phoneNumber: ""
+            phoneNum: ""
 
         }
     }
@@ -20,7 +20,10 @@ class App extends Component {
         this.props.getEmployees()
     }
 
-    
+    handleChange = (e) => {
+        const target = e.target
+        const name  = target.name;
+    }
 
 
     handleSubmit = e => {
@@ -31,14 +34,15 @@ class App extends Component {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
             email: this.state.email,
-            phoneNumber: this.state.phoneNumber
+            phoneNum: this.state.phoneNumber
         }
         this.props.postEmployees(newEmployee)
-        this.setState({employeeId:"",
+        this.setState({
+                        employeeId:"",
                         firstName: "",
                         lastName: "",
                         email: "",
-                        phoneNumber: ""
+                        phoneNum: ""
                     })
         }
 
