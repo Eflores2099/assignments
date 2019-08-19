@@ -1,7 +1,7 @@
 import React from 'react'
 
 const AddEmployeeForm = props => {
-    const {handleSubmit,handleChange, employeeId,firstName, lastName, email, phoneNum, btnText} = props
+    const {handleSubmit, handleChange, employeeId,firstName, lastName, email, phoneNum, btnText} = props
     return (
         <form onSubmit={handleSubmit}>
 

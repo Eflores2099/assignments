@@ -21,8 +21,9 @@ class App extends Component {
     }
 
     handleChange = (e) => {
-        const target = e.target
-        const name  = target.name;
+        const target = e.target;
+        const name = target.name;
+        
     }
 
 
