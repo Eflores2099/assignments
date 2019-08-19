@@ -48,8 +48,8 @@ class EmployeeProvider extends Component {
             <EmployeeContext.Provider
                 value={{
                     employees: this.state.employees,
-                    getEmployees: this.state.getEmployees,
-                    addEmployee:this.state.addEmployee,
+                    getEmployees: this.getEmployees,
+                    addEmployee:this.addEmployee,
                     deleteEmployee: this.deleteEmployee,
                     updateEmployee: this.updateEmployee
                 }}>
