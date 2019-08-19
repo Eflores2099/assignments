@@ -17,7 +17,7 @@ class App extends Component {
         }
     }
     componentDidMount() {
-        this.props.getEmployees()
+        // this.props.getEmployees()
     }
 
     handleChange = (e) => {
@@ -37,7 +37,7 @@ class App extends Component {
             email: this.state.email,
             phoneNum: this.state.phoneNumber
         }
-        this.props.postEmployees(newEmployee)
+        this.props.addEmployee(newEmployee)
         this.setState({
                         employeeId:"",
                         firstName: "",

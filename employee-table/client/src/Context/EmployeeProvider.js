@@ -14,7 +14,7 @@ class EmployeeProvider extends Component {
         getEmployees = () => {
             axios.get("/employee/v1").then(response => {
                 this.setState({
-                    employees: response.data.reverse()
+                    employees: response.data
                 })
             })
         }
