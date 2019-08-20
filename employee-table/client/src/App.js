@@ -16,9 +16,9 @@ class App extends Component {
 
         }
     }
-    componentDidMount() {
-        this.props.getEmployees()
-    }
+    // componentDidMount() {
+    //     this.props.getEmployees()
+    // }
 
     handleChange = (e) => {
         const target = e.target;
