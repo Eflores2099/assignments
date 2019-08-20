@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import AddEmployeeForm from './Components/AddEmployeeForm.js'
+import EmployeeList from './Components/EmployeeList.js'
 import { withEmployees } from './Context/EmployeeProvider.js'
 
 
@@ -16,9 +17,9 @@ class App extends Component {
 
         }
     }
-    // componentDidMount() {
-    //     this.props.getEmployees()
-    // }
+    componentDidMount() {
+        this.props.getEmployees()
+    }
 
     handleChange = (e) => {
         const target = e.target;
@@ -49,7 +50,7 @@ class App extends Component {
 
         render() {
             return(
-                <div className= "grid">
+                 <div className= "grid">
                     <span>
                         <strong>ID</strong>
                     </span>
@@ -65,9 +66,18 @@ class App extends Component {
                     <span>
                         <strong>Phone #</strong>
                     </span>
+                    
+                    <span>{this.state.employeeId}</span>
+                    <span>{this.state.firstName}</span>
+                    <span>{this.state.lastName}</span>
+                    <span>{this.state.email}</span>
+                    <span>{this.state.phoneNum}</span>
 
 
-                </div>
+
+                </div> 
+                
+
             )
         }
 
