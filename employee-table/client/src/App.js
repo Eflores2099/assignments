@@ -23,8 +23,9 @@ class App extends Component {
     }
 
     handleChange = (e) => {
-        const target = e.target;
-        const name = target.name;
+       this.setState({
+           [e.target.name] : e.target.value
+       })
    
     }
 
@@ -51,32 +52,25 @@ class App extends Component {
 
         render() {
             return(
-                 <div className= "grid">
-                    <span>
-                        <strong>ID</strong>
-                    </span>
-                    <span>
-                        <strong>First Name</strong>
-                    </span>
-                    <span>
-                        <strong>Last Name</strong>
-                    </span>
-                    <span>
-                        <strong>Email</strong>
-                    </span>
-                    <span>
-                        <strong>Phone #</strong>
-                    </span>
-                    
-                    <span>{this.state.employeeId}</span>
-                    <span>{this.state.firstName}</span>
-                    <span>{this.state.lastName}</span>
-                    <span>{this.state.email}</span>
-                    <span>{this.state.phoneNum}</span>
+                <div id="container">
+                    <div className= "addNew">
+                        <AddEmployeeForm 
+                            btnText="Add Employee"
+                            handleChange={this.handleChange}
+                            handleSubmit={this.handleSubmit}
+                        {...this.state}
+                        />
+                    </div> 
 
+                    <div className = "grid">
+                        <EmployeeList
+                            employees={this.props.employees}
+                            deleteEmployee={this.props.deleteEmployee}
+                            updateEmployee={this.props.updateEmployee}
+                        />
 
-
-                </div> 
+                    </div>
+                </div>
                 
 
             )

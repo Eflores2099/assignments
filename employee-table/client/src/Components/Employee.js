@@ -22,8 +22,8 @@ class Employee extends Component {
     }
 
     handleChange = e => {
-        const target = e.target
-        const name = target.name;
+        const target = e.target.name
+        const name = target.name
     }
 
     handleSubmit = e => {
@@ -44,6 +44,12 @@ class Employee extends Component {
         const {employeeId, firstName, lastName, email, phoneNum, _id, deleteEmployee} = this.props
         return(
             <div>
+                <AddEmployeeForm
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
+                btnText= "Submit Edit"
+                {...this.state}
+                />
 
             </div>
         )
